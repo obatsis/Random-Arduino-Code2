@@ -1,0 +1,67 @@
+enum {aws_t, tws_t, awa_t, twa_t, twd_t, cog_t, 
+      sog_t, odo_t, mta_t, mtw_t, dbt_t, dbs_t, len_t};
+
+class SailData {
+public:
+  SailData() {
+    aws=999;
+    tws=999;
+    awa=999;
+    twa=999;
+    cog=999;
+    sog=999;
+    odo=999;
+    mtw=999;
+    mta=999; 
+    dbt=999;
+    dbs=999;  
+    twd=999; 
+
+    name[aws_t] = {"aws"};
+    name[tws_t] = {"tws"};
+    name[awa_t] = {"awa"};
+    name[twa_t] = {"twa"};
+    name[cog_t] = {"cog"};
+    name[sog_t] = {"sog"};
+    name[odo_t] = {"odo"};
+    name[mtw_t] = {"mtw"};
+    name[mta_t] = {"mta"}; 
+    name[dbt_t] = {"dbt"};
+    name[dbs_t] = {"dbs"};  
+    name[twd_t] = "twd";     
+  }
+	float aws, tws, awa, twa, twd;
+	float cog, sog, odo;
+  float mta, mtw;
+  float dbt, dbs;
+
+  float data[len_t];
+  char name[len_t][5];
+  
+  print_all(HardwareSerial* stream){
+    stream->print(aws);
+    stream->print('\t');
+    stream->print(tws);
+    stream->print('\t');
+    stream->print(awa);
+    stream->print('\t');
+    stream->print(twa);
+    stream->print('\t');
+    stream->print(twd);
+    stream->print('\t');
+    stream->print(cog);
+    stream->print('\t');
+    stream->print(sog);
+    stream->print('\t');
+    stream->print(odo);
+    stream->print('\t');
+    stream->print(mtw);
+    stream->print('\t');
+    stream->print(mta);
+    stream->print('\t');
+    stream->print(dbt);
+    stream->print('\t');
+    stream->print(dbs);
+    stream->println();  
+  }
+};
